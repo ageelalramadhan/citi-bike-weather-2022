@@ -93,7 +93,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("""
 <div style="font-family: monospace; font-size: 11px; color: #888; line-height: 1.8;">
 <b style="color:#f0f0f0">Dataset</b><br>
-~1.7M trip records<br>
+29.8M trip records<br>
 NYC Citi Bike (2022)<br><br>
 <b style="color:#f0f0f0">Weather</b><br>
 NOAA GHCND<br>
@@ -149,7 +149,7 @@ if "Introduction" in page:
         "</div>", unsafe_allow_html=True)
 
     col1, col2, col3, col4 = st.columns(4)
-    col1.metric("Trip Records", "~1.7M", "Full year 2022")
+    col1.metric("Trip Records", "29.8M", "Full year 2022")
     col2.metric("Peak Demand", "~115K/day", "August average")
     col3.metric("Winter vs Summer", "~50%", "Nov–Apr vs Jun–Aug")
     col4.metric("Top Station", "128K trips", "W 21 St & 6 Ave")
@@ -162,7 +162,7 @@ if "Introduction" in page:
 Citi Bike generates millions of trip records each year, but raw trip logs don't tell operations 
 teams **when to scale supply**, **which stations to prioritize**, or **how to plan for seasonal swings**.
 
-This dashboard bridges that gap — merging 1.7 million individual ride records with NOAA daily 
+This dashboard bridges that gap — merging 29.8 million individual ride records with NOAA daily 
 weather data from LaGuardia Airport, and turning the combined dataset into actionable intelligence 
 for operational decision-making.
 
@@ -184,7 +184,7 @@ for operational decision-making.
 | 1. Acquire | 12 monthly Citi Bike ZIPs + NOAA API weather data |
 | 2. Extract | Combined 12 CSVs using generator inside `pd.concat()` |
 | 3. Clean | Parsed timestamps, filtered 2022, reshaped NOAA long→wide |
-| 4. Aggregate | Grouped 1.7M rows to daily ride counts |
+| 4. Aggregate | Grouped 29.8M rows to daily ride counts |
 | 5. Merge | Inner join rides + weather on date key |
 | 6. Visualize | Plotly interactive charts + Kepler.gl spatial map |
 | 7. Deploy | Streamlit Cloud |
